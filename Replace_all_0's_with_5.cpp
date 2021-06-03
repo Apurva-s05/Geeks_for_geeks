@@ -11,34 +11,20 @@ class Solution{
     /*you are required to complete this method*/
     int convertFive(int n)
     {
-        // Amount to be added
-    int result = 0;
- 
-    // Unit decimal place
-    int decimalPlace = 1;
-     
-    if (n == 0)
+ int t = n;
+    int count = 1;
+    
+    while(t>0)
     {
-        result += (5 * decimalPlace);
-    }
- 
-    while (n > 0)
-    {
-        if (n % 10 == 0)
+        if((t%10) == 0)
         {
-             
-            // A number divisible by 10, then
-            // this is a zero occurrence in
-            // the input
-            result += (5 * decimalPlace);
- 
+            n+= (count*5);            
         }
-         
-        // Move one decimal place
-        n /= 10;
-        decimalPlace *= 10;
+        t = t/10;    
+        count = count*10;
     }
-    return result;
+    
+    return n;
     }
 };
 
